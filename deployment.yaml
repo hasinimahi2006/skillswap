@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skillswap-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skillswap
+  template:
+    metadata:
+      labels:
+        app: skillswap
+    spec:
+      containers:
+        - name: skillswap
+          image: hasinimahi006/skillswap-app:v1
+          ports:
+            - containerPort: 5000
