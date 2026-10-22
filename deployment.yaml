@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: skillswap
-          image: hasinimahi006/skillswap-app:v1
+          image: hasini006/skillswap-app:v1
           ports:
             - containerPort: 5000
