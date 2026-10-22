@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SkillSwap{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="/">SkillSwap<span>.</span></a>
+        <div class="nav-links">
+            <a href="/">Explore Skills</a>
+            <a href="/post">Post a Skill</a>
+            <a href="/matches">Find Matches</a>
+            <a href="/my-exchanges">My Exchanges</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>SkillSwap &copy; 2026 · Learn together, grow together.</footer>
+</body>
+</html>

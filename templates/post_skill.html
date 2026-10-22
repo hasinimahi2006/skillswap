@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+{% block title %}Post a Skill | SkillSwap{% endblock %}
+{% block content %}
+<section class="page-header">
+    <p class="eyebrow">GIVE KNOWLEDGE, GAIN KNOWLEDGE</p>
+    <h1>Share your <span>skills.</span></h1>
+    <p>Tell the community what you can teach and what you'd love to learn.</p>
+</section>
+
+<form class="skill-form" method="POST">
+    <label>Your name
+        <input type="text" name="student_name" placeholder="Enter your name" required>
+    </label>
+
+    <label>Skill you can teach
+        <input type="text" name="teach_skill" placeholder="e.g. Python programming" required>
+    </label>
+
+    <label>Skill you want to learn
+        <input type="text" name="learn_skill" placeholder="e.g. Graphic design" required>
+    </label>
+
+    <label>About your skill
+        <textarea name="description" rows="4" placeholder="Describe your experience or what you can share..."></textarea>
+    </label>
+
+    <button class="btn" type="submit">Publish My Skill →</button>
+</form>
+{% endblock %}

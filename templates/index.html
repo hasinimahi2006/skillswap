@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+{% block title %}Explore Skills | SkillSwap{% endblock %}
+{% block content %}
+<section class="hero">
+    <p class="eyebrow">THE STUDENT SKILL EXCHANGE</p>
+    <h1>Share what you know.<br><span>Learn what you love.</span></h1>
+    <p class="hero-text">Connect with students, exchange skills, and learn something new without spending money.</p>
+    <a class="btn" href="/post">Start Sharing Skills →</a>
+</section>
+
+<section class="section-heading">
+    <div>
+        <p class="eyebrow">COMMUNITY</p>
+        <h2>Explore student skills</h2>
+    </div>
+    <span class="count">{{ skills|length }} skills shared</span>
+</section>
+
+<div class="skills-grid">
+    {% for skill in skills %}
+    <article class="skill-card">
+        <div class="card-icon">✦</div>
+        <span class="tag">Offers to teach</span>
+        <h3>{{ skill['teach_skill'] }}</h3>
+        <p class="description">{{ skill['description'] or 'Ready to share knowledge and learn together.' }}</p>
+        <div class="exchange-info">
+            <span>Wants to learn</span>
+            <strong>{{ skill['learn_skill'] }}</strong>
+        </div>
+        <p class="student">Shared by {{ skill['student_name'] }}</p>
+    </article>
+    {% else %}
+    <div class="empty-state">
+        <h3>Be the first to share a skill!</h3>
+        <p>Your next learning partner could be right here.</p>
+        <a class="btn" href="/post">Post your first skill</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

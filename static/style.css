@@ -1,0 +1,253 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background: #f7f7fb;
+    --text: #202039;
+    --muted: #77788e;
+    --primary: #6854d9;
+    --border: #e8e7f1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.navbar {
+    min-height: 76px;
+    padding: 18px 7%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font: 800 25px 'Manrope', sans-serif;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.logo span, h1 span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #626278;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.container {
+    max-width: 1120px;
+    width: 86%;
+    margin: auto;
+    min-height: 75vh;
+}
+
+.hero {
+    margin: 42px 0;
+    padding: 70px 8%;
+    border-radius: 24px;
+    background: linear-gradient(120deg, #eeeaff, #f5f0ff, #e8f3ff);
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1, h2, h3 {
+    font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.2;
+    margin: 16px 0;
+}
+
+.hero-text, .page-header > p:last-child {
+    max-width: 570px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 14px 20px;
+    margin-top: 18px;
+    font: 700 14px 'DM Sans', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #5140bc;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 38px 0 20px;
+    gap: 20px;
+}
+
+.section-heading h2 {
+    margin-top: 5px;
+}
+
+.count, .student {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.skill-card {
+    background: white;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: 0 5px 18px #30236b08;
+}
+
+.card-icon {
+    color: var(--primary);
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.tag {
+    display: inline-block;
+    color: #6250c7;
+    background: #f0edff;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.skill-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.exchange-info {
+    background: #f8f7fc;
+    padding: 13px;
+    margin-top: 12px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.exchange-info span {
+    color: var(--muted);
+}
+
+.page-header {
+    padding: 55px 0 20px;
+}
+
+.skill-form {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    max-width: 650px;
+    margin-bottom: 55px;
+}
+
+.skill-form label {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.skill-form input, .skill-form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 9px;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font: 14px 'DM Sans', sans-serif;
+    outline-color: var(--primary);
+}
+
+.empty-state {
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    grid-column: 1 / -1;
+}
+
+footer {
+    padding: 25px;
+    background: white;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 40px 7%;
+    }
+
+    .container {
+        width: 90%;
+    }
+}

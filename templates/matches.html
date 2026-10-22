@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+{% block title %}Find Matches | SkillSwap{% endblock %}
+{% block content %}
+<section class="page-header">
+    <p class="eyebrow">FIND YOUR LEARNING PARTNER</p>
+    <h1>Discover <span>connections.</span></h1>
+    <p>Explore what students teach and the skills they want to learn.</p>
+</section>
+
+<div class="skills-grid">
+    {% for skill in skills %}
+    <article class="skill-card">
+        <span class="tag">Potential connection</span>
+        <h3>{{ skill['student_name'] }}</h3>
+        <div class="exchange-info">
+            <span>Can teach</span>
+            <strong>{{ skill['teach_skill'] }}</strong>
+        </div>
+        <div class="exchange-info">
+            <span>Wants to learn</span>
+            <strong>{{ skill['learn_skill'] }}</strong>
+        </div>
+        <p class="description">{{ skill['description'] or 'Open to a skill exchange.' }}</p>
+    </article>
+    {% else %}
+    <div class="empty-state">
+        <h3>No matches to explore yet</h3>
+        <p>Post a skill to start building the community.</p>
+        <a class="btn" href="/post">Post a Skill</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

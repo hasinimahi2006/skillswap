@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% block title %}My Exchanges | SkillSwap{% endblock %}
+{% block content %}
+<section class="page-header">
+    <p class="eyebrow">YOUR SKILL JOURNEY</p>
+    <h1>My <span>exchanges.</span></h1>
+    <p>Review the skills shared by members of the SkillSwap community.</p>
+</section>
+
+<div class="skills-grid">
+    {% for skill in skills %}
+    <article class="skill-card">
+        <span class="tag">Community listing</span>
+        <h3>{{ skill['teach_skill'] }}</h3>
+        <p class="student">Shared by {{ skill['student_name'] }}</p>
+        <div class="exchange-info">
+            <span>Learning goal</span>
+            <strong>{{ skill['learn_skill'] }}</strong>
+        </div>
+        <p class="description">{{ skill['description'] or 'No description provided.' }}</p>
+    </article>
+    {% else %}
+    <div class="empty-state">
+        <h3>No exchanges yet</h3>
+        <p>Post a skill to begin your learning journey.</p>
+        <a class="btn" href="/post">Get Started</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
